@@ -1,10 +1,3 @@
-
-.Rproj.user/shared/notebooks/paths
 *.rdf
 *.csv
-.Rproj.user/631D06D0/sources/s-4EFE7DE7/lock_file
-.Rproj.user/631D06D0/sources/s-4EFE7DE7/C29B846B-contents
-.Rproj.user/631D06D0/sources/s-4EFE7DE7/C29B846B
-.Rproj.user/631D06D0/sources/s-4EFE7DE7/AAAA0B13-contents
-.Rproj.user/631D06D0/sources/s-4EFE7DE7/AAAA0B13
-.Rproj.user/shared/notebooks/paths
+*.Rproj.user

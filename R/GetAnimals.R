@@ -72,8 +72,7 @@ GetAnimals <- function(breed = NULL, size = NULL, gender = NULL, age = NULL, col
 
   if(parameter_response$status_code == 200)
   {
-    content <- jsonlite::fromJSON(httr::content(parameter_response, "text"))
-    #data.table::data.table(content)
+    content <- jsonlite::fromJSON(httr::content(parameter_response, "text", encoding = 'UTF-8'))
   }
   else
   {
