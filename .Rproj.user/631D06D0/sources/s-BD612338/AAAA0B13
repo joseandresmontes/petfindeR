@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1590683755893.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "AAAA0B13",
+    "lastKnownWriteTime" : 1590683747,
+    "last_content_update" : 1590683747,
+    "path" : "C:/Users/JoseA/OneDrive/Desktop/Indep. Study/R packages/petfindeR/.Rbuildignore",
+    "project_path" : ".Rbuildignore",
+    "properties" : {
+        "cursorPosition" : "2,0",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "text"
+}
