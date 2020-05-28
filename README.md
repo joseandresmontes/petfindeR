@@ -3,8 +3,9 @@
 The Petfinder API (Application Programming Interface) allows you to access the Petfinder database of hundreds of thousands of pets ready for adoption and over ten thousand animal welfare organizations. 
 
 With the PetfindeR, you can:
-*Search for and display pet listings based on pet characteristics, location, and status.
-*Search for and display animal welfare organizations based on organization name, ID, and location.
+
+* Search for and display pet listings based on pet characteristics, location, and status.
+* Search for and display animal welfare organizations based on organization name, ID, and location.
 
 An many other field! Look at the documentation to explore supported parameters.
 ___
