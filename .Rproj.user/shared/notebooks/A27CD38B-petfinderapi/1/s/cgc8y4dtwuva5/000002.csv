@@ -4,7 +4,7 @@
 "0","                       authorize = NULL)"
 "0",""
 "0","petfinder_app <- httr::oauth_app('petfinder', "
-"0","                         key = ""Ot3Sw1z19Nm1Nly0R78gU9AEDQK5CzRo8GhoaVJyVOhimzHzF2"", "
+"0","                         key=""Ot3Sw1z19Nm1Nly0R78gU9AEDQK5CzRo8GhoaVJyVOhimzHzF2"","
 "0","                         secret = ""MFjH2YyL5sjYIyK4dOJjnra7S8DKnuHvxRRvhDR9"" )"
 "0",""
 "0","petfinder_token <- httr::oauth2.0_token(endpoint = oauth_petfinder_endpoint,"

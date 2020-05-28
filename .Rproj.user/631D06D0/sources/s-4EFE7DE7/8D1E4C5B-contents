@@ -1,0 +1,122 @@
+---
+title: "test"
+author: "Jose Andres Montes Lopez"
+date: "5/25/2020"
+output: html_document
+---
+
+```{r}
+library(httr)
+```
+
+
+```{r}
+# Set Authentication parameters to retrieve token
+oauth_petfinder_endpoint <-
+  httr::oauth_endpoint(access="https://api.petfinder.com/v2/oauth2/token", 
+                       authorize = NULL)
+
+petfinder_app <- httr::oauth_app('petfinder', 
+                         key="Ot3Sw1z19Nm1Nly0R78gU9AEDQK5CzRo8GhoaVJyVOhimzHzF2",
+                         secret = "MFjH2YyL5sjYIyK4dOJjnra7S8DKnuHvxRRvhDR9" )
+
+petfinder_token <- httr::oauth2.0_token(endpoint = oauth_petfinder_endpoint,
+                                  app = petfinder_app,
+                                  client_credentials = T)
+```
+
+
+```{r}
+GetAnimals <- function(breed = NULL, size = NULL, gender = NULL, age = NULL, color = NULL, 
+                       coat = NULL, status = NULL, organization = NULL, good_with_children = NULL,
+                       good_with_dogs = NULL, good_with_cats = NULL, location = NULL, 
+                       distance = NULL, before = NULL, after = NULL, limit = 20)
+  {
+  #set user
+  user <- httr::user_agent("R User")
+  #url query
+  url <- httr::modify_url(
+  url = "https://api.petfinder.com",
+  path = c("v2", "animals"),
+  query = list(
+    breed = breed,
+    size = size,
+    gender = gender,
+    age = age,
+    color = color,
+    coat = coat,
+    status = status,
+    organization = organization,
+    good_with_children = good_with_children,
+    good_with_dogs = good_with_dogs,
+    good_with_cats = good_with_cats,
+    location = location,
+    distance = distance,
+    before = before,
+    after = after,
+    limit = limit
+  )
+
+)
+  #request with custom R user and token
+  parameter_response <- httr::GET(url, user, config(token = petfinder_token))
+
+  if(parameter_response$status_code == 200)
+  {
+    content <- jsonlite::fromJSON(httr::content(parameter_response, "text"))
+    #data.table::data.table(content)
+  }
+  else
+  {
+    print("Error with request, please check query")
+  }
+}
+```
+
+
+```{r}
+GetAnimalType <- function(limit = 20)
+  {
+  #set user
+  user <- httr::user_agent("R User")
+  #url query
+  url <- modify_url(
+  url = "https://api.petfinder.com",
+  path = c("v2", "types"),
+  query = list(
+    name = name,
+    limit = limit
+  )
+
+)
+  #request with custom R user and token
+  parameter_response <- httr::GET(url, user, config(token = petfinder_token))
+
+  if(parameter_response$status_code == 200)
+  {
+    content <- jsonlite::fromJSON(httr::content(parameter_response, "text"))
+    #data.table::data.table(content)
+  }
+  else
+  {
+    print("Error with request, please check query")
+  }
+}
+```
+
+```{r}
+test1 <- GetAnimals()
+```
+
+```{r}
+test1
+```
+
+```{r}
+library(dplyr)
+test <- test1$animals
+test <- select(test,-c(url))
+
+print(test)
+```
+
