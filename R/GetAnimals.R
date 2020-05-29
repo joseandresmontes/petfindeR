@@ -68,7 +68,7 @@ GetAnimals <- function(breed = NULL, size = NULL, gender = NULL, age = NULL, col
 
   )
   #request with custom R user and token
-  parameter_response <- httr::GET(url, user, config(token = petfinder_token))
+  parameter_response <- httr::GET(url, user, httr::config(token = petfinder_token))
 
   if(parameter_response$status_code == 200)
   {
