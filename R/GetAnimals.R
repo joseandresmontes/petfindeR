@@ -35,11 +35,9 @@ GetAnimals <- function(breed = NULL, size = NULL, gender = NULL, age = NULL, col
   #set authentication parameters to retrieve token
   oauth_petfinder_endpoint <- httr::oauth_endpoint(access="https://api.petfinder.com/v2/oauth2/token",
                                                    authorize = NULL)
-  PETFINDER_APP_KEY <- Sys.getenv('PETFINDER_APP_KEY')
-  PETFINDER_APP_SECRET <- Sys.getenv('PETFINDER_APP_SECRET')
   petfinder_app <- httr::oauth_app('petfinder',
-                                   key = PETFINDER_APP_KEY,
-                                   secret = PETFINDER_APP_SECRET)
+                                   key = Sys.getenv('PETFINDER_APP_KEY'),
+                                   secret = Sys.getenv('PETFINDER_APP_SECRET'))
   petfinder_token <- httr::oauth2.0_token(endpoint = oauth_petfinder_endpoint,
                                           app = petfinder_app,
                                           client_credentials = T)
